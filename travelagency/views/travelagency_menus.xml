@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <menuitem id="travelagency_menu_root" name="Travel Agency">
+        <menuitem id="travelagency_menu_first_level" name="Customer">
+            <menuitem id="travelagency_customer_menu_action" action="travelagency_customer_action"/>
+        </menuitem>
+        <menuitem id="travelagency_settings_menu_first_level" name="Settings">
+            <menuitem id="travelagency_preference_menu_action" action="travelagency_preference_tag_action"/>
+        </menuitem>
+    </menuitem>
+</odoo>

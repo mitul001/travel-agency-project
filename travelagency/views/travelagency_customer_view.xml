@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <record id="travelagency_customer_action" model="ir.actions.act_window">
+        <field name="name">Details</field>
+        <field name="res_model">travelagency.customer</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- ___________________________TREE VIEW___________________________ -->
+
+    <record id="travelagency_customer_view_tree" model="ir.ui.view">
+        <field name="name">travelagency.customer.view.tree</field>
+        <field name="model">travelagency.customer</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="budget"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="preference_tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <field name="gender" optional="hide"/>
+                <field name="street" optional="hide"/>
+                <field name="street2" optional="hide"/>
+                <field name="city" optional="hide"/>
+                <field name="state" optional="hide"/>
+                <field name="country" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- ___________________________FORM VIEW___________________________ -->
+
+    <record id="travelagency_customer_view_form" model="ir.ui.view">
+        <field name="name">travelagency.customer.view.form</field>
+        <field name="model">travelagency.customer</field>
+        <field name="arch" type="xml">
+            <form string="Customer">
+                <sheet>
+                    <h1>
+                        <field widget="text" name="name" placeholder="e.g. Mitul Patel" />
+                    </h1>
+                    <group>
+                        <group>
+                            <span class="o_form_label o_td_label">
+                                <b>Address</b>
+                            </span>
+                            <div class="o_address_format">
+                                <field name="street" placeholder="Street..." class="o_address_street"/>
+                                <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                                <field name="city" placeholder="City" class="o_address_city"/>
+                                <field name="state" class="o_address_state" placeholder="State"/>
+                                <div class="d-flex justify-content-between">
+                                    <field name="country" placeholder="Country" class="o_address_country"/>
+                                </div>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="gender"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="preference_tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>    
+                        <field name="budget"/>
+                    </group>
+                    <notebook>
+                        <page string="Package">
+
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

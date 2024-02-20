@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+travelagency.access_travelagency_customer,access_travelagency_customer,travelagency.model_travelagency_customer,base.group_user,1,1,1,1
+travelagency.access_travelagency_preference_tag,access_travelagency_preference_tag,travelagency.model_travelagency_preference_tag,base.group_user,1,1,1,1
