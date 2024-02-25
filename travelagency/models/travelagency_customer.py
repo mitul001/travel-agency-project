@@ -13,5 +13,9 @@ class TravelagencyCustomer(models.Model):
     city = fields.Char(string='City')
     state = fields.Char(string='State')
     country = fields.Char(string='Country')
-    budget = fields.Integer(string='Budget')
-    preference_tag_ids = fields.Many2many('travelagency.preference.tag')
+    budget = fields.Integer(string='Budget',required=True)
+
+    accommodation_type_id = fields.Many2one('travelagency.accommodation.type')
+    packages_type_id = fields.Many2one('travelagency.package.type')
+    package_ids = fields.Many2many('travelagency.packages',required=True)
+    accommodation_ids = fields.Many2many('travelagency.accommodation',required=True)

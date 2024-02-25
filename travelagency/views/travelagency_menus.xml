@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <odoo>
     <menuitem id="travelagency_menu_root" name="Travel Agency">
-        <menuitem id="travelagency_menu_first_level" name="Customer">
+        <menuitem id="travelagency_menu_first_level" name="Customer" sequence="1">
             <menuitem id="travelagency_customer_menu_action" action="travelagency_customer_action"/>
         </menuitem>
-        <menuitem id="travelagency_settings_menu_first_level" name="Settings">
-            <menuitem id="travelagency_preference_menu_action" action="travelagency_preference_tag_action"/>
+        <menuitem id="travelagency_product_service_menu_first_level" name="Product &amp; service" sequence="2">
+            <menuitem id="travelagnecy_product_service_menu_action" action="travelagency_packages_action"/>
+            <menuitem id="travelagency_accommodation_service_menu_action" action="travelagency_accommodation_action"/>
+        </menuitem>
+        <menuitem id="travelagency_settings_menu_first_level" name="Settings" sequence="3">
+            <menuitem id="travelagency_package_type_meny_action" action="travelagency_package_type_action"/>
+            <menuitem id="travelagency_accommodation_type_meny_action" action="travelagency_accommodation_type_action"/>
         </menuitem>
     </menuitem>
 </odoo>

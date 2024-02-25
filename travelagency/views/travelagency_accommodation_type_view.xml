@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="travelagency_accommodation_type_action" model="ir.actions.act_window">
+        <field name="name">Accommodation Type</field>
+        <field name="res_model">travelagency.accommodation.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- ___________________________FORM VIEW___________________________ -->
+
+    <record id="travelagency_accommodation_type_view_form" model="ir.ui.view">
+        <field name="name">travelagency.accommodation.type.view.form</field>
+        <field name="model">travelagency.accommodation.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                        <h1><field name="name" widget="text" placeholder="eg Hotel...."/></h1>
+                        <notebook>
+                            <page string="Accommodation List">
+                                <field name="accommodation_ids"/>
+                            </page>
+                        </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

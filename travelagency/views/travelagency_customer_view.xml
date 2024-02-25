@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <odoo>
     <record id="travelagency_customer_action" model="ir.actions.act_window">
         <field name="name">Details</field>
@@ -18,7 +17,8 @@
                 <field name="budget"/>
                 <field name="phone"/>
                 <field name="email"/>
-                <field name="preference_tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <field name="packages_type_id"/>
+                <field name="accommodation_type_id"/>
                 <field name="gender" optional="hide"/>
                 <field name="street" optional="hide"/>
                 <field name="street2" optional="hide"/>
@@ -38,7 +38,7 @@
             <form string="Customer">
                 <sheet>
                     <h1>
-                        <field widget="text" name="name" placeholder="e.g. Mitul Patel" />
+                        <field widget="text" name="name" placeholder="e.g. Mitul" />
                     </h1>
                     <group>
                         <group>
@@ -62,12 +62,16 @@
                         </group>
                     </group>
                     <group>
-                        <field name="preference_tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>    
                         <field name="budget"/>
+                        <field name="packages_type_id"/>
+                        <field name="accommodation_type_id"/>
                     </group>
                     <notebook>
-                        <page string="Package">
-
+                        <page string="Packages">
+                            <field name="package_ids"/>
+                        </page>
+                        <page string="Accommodations">
+                            <field name="accommodation_ids"/>
                         </page>
                     </notebook>
                 </sheet>

@@ -8,12 +8,14 @@
     'data':[
         'security/ir.model.access.csv',
 
+        'views/travelagency_accommodation_view.xml',
+        'views/travelagency_packages_view.xml',
+        'views/travelagency_accommodation_type_view.xml',
+        'views/travelagency_package_type_view.xml',
         'views/travelagency_customer_view.xml',
-        'views/travelagency_preference_tag_view.xml',
         'views/travelagency_menus.xml'
     ],
     'installable': True,
     'application': True,
     'license':'LGPL-3'
 }
-

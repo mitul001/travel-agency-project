@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="travelagency_packages_action" model="ir.actions.act_window">
+        <field name="name">Packages</field>
+        <field name="res_model">travelagency.packages</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+        <!-- ___________________________TREE VIEW___________________________ -->
+
+        <record id="travelagency_packages_view_tree" model="ir.ui.view">
+            <field name="name">travelagency.packages.view.tree</field>
+            <field name="model">travelagency.packages</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="days"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- ___________________________FORM VIEW___________________________ -->
+
+        <record id="travelagency_packages_view_form" model="ir.ui.view">
+            <field name="name">travelagency.packages.view.form</field>
+            <field name="model">travelagency.packages</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                            <h1><field name="name" widget="text" placeholder="eg Adventure Tours...."/></h1>
+                            <group>
+                                <field name="days"/>
+                                <field name="price"/>
+                                <field name="package_type_id"/>
+                            </group>
+                            <notebook>
+                                <page string="Description">
+                                    <label for="description"/>
+                                    <field name="description"/>
+                                </page>
+                            </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+</odoo>

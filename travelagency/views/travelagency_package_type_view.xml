@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="travelagency_package_type_action" model="ir.actions.act_window">
+        <field name="name">Package Type</field>
+        <field name="res_model">travelagency.package.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+     <!-- ___________________________FORM VIEW___________________________ -->
+
+     <record id="travelagency_package_type_view_form" model="ir.ui.view">
+        <field name="name">travelagency.package.type.view.form</field>
+        <field name="model">travelagency.package.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                        <h1><field name="name" widget="text" placeholder="eg Luxuary...."/></h1>
+                        <notebook>
+                            <page string="Package List">
+                                <field name="packages_ids"/>
+                            </page>
+                        </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
