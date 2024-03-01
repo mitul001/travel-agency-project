@@ -19,6 +19,7 @@
                 <field name="email"/>
                 <field name="packages_type_id"/>
                 <field name="accommodation_type_id"/>
+                <field name="status"/>
                 <field name="accommodation_budget" optional="hide"/>
                 <field name="package_budget" optional="hide"/>
                 <field name="gender" optional="hide"/>
@@ -38,10 +39,20 @@
         <field name="model">travelagency.customer</field>
         <field name="arch" type="xml">
             <form string="Customer">
+                <header>
+                    <button name="action_confirm" type="object" string="Confirm" class="oe_highlight" invisible="status in ('confirmed','cancelled')"/>
+                    <button name="action_cancel" type="object" string="Cancel" invisible="status in ('confirmed','cancelled')"/>
+                    <field name="status" widget='statusbar' statusbar_visible='new,package_added,confirmed,cancelled'/>
+                </header>
                 <sheet>
                     <h1>
                         <field widget="text" name="name" placeholder="e.g. Mitul" />
                     </h1>
+                    <div>
+                        <group>
+                            <field name="status"/>
+                        </group>
+                    </div>
                     <group>
                         <group>
                             <span class="o_form_label o_td_label">
@@ -89,4 +100,35 @@
             </form>
         </field>
     </record>
+
+    <!-- ___________________________SEARCH VIEW___________________________ -->
+
+    <record id="travelagency_customer_view_search" model="ir.ui.view">
+        <field name="name">travelagency.customer.view.search</field>
+        <field name="model">travelagency.customer</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="budget"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="packages_type_id"/>
+                <field name="accommodation_type_id"/>
+                <field name="status"/>
+                <field name="accommodation_budget" />
+                <field name="package_budget" />
+                <field name="gender"/>
+                <field name="street" />
+                <field name="street2" />
+                <field name="city" />
+                <field name="state" />
+                <field name="country"/>
+                <group expand="1" string="Group By">
+                    <filter string="Accommodation type" name='accommodation_type' context="{'group_by':'accommodation_type_id'}"/>
+                    <filter string="Status" name='status' context="{'group_by':'status'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
 </odoo>

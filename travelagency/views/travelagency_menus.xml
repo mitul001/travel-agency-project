@@ -9,8 +9,8 @@
             <menuitem id="travelagency_accommodation_service_menu_action" action="travelagency_accommodation_action"/>
         </menuitem>
         <menuitem id="travelagency_settings_menu_first_level" name="Settings" sequence="3">
-            <menuitem id="travelagency_package_type_meny_action" action="travelagency_package_type_action"/>
-            <menuitem id="travelagency_accommodation_type_meny_action" action="travelagency_accommodation_type_action"/>
+            <menuitem id="travelagency_package_type_menu_action" action="travelagency_package_type_action"/>
+            <menuitem id="travelagency_accommodation_type_menu_action" action="travelagency_accommodation_type_action"/>
         </menuitem>
     </menuitem>
 </odoo>

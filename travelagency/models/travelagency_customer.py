@@ -17,7 +17,8 @@ class TravelagencyCustomer(models.Model):
     package_budget = fields.Float(string='Package Budget',required=True)
     accommodation_budget = fields.Float(string='Accommodation Budget',required=True)
     budget = fields.Float(string='Budget',compute="_compute_total_budget")
-
+    status= fields.Selection(string='Status',tracking=True,selection=[
+    ('new', 'New'),('package_added', 'Package Added'),('confirmed', 'Confirmed'),('cancelled', 'Cancelled')],default=str('new'))
     accommodation_type_id = fields.Many2one('travelagency.accommodation.type')
     packages_type_id = fields.Many2one('travelagency.package.type')
     package_ids = fields.Many2many('travelagency.packages',required=True,tracking=True)
@@ -27,3 +28,16 @@ class TravelagencyCustomer(models.Model):
     def _compute_total_budget(self):
         for record in self:
             record.budget=record.accommodation_budget+record.package_budget
+
+    @api.onchange('package_ids','accommodation_ids')
+    def _onchange_status(self):
+        if self.package_ids or self.accommodation_ids:
+            self.status = 'package_added'
+        else:
+            self.status = 'new'
+
+    def action_confirm(self):
+        self.status = 'confirmed'
+
+    def action_cancel(self):
+        self.status = 'cancelled'

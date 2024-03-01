@@ -9,6 +9,7 @@
         <field name="city">New York</field>
         <field name="state">NY</field>
         <field name="country">USA</field>
+        <field name="status">new</field>
         <field name="package_budget">3000</field>
         <field name="accommodation_budget">2000</field>
         <field name="accommodation_type_id" ref="accommodation_type_hotel"/>
@@ -26,6 +27,7 @@
         <field name="city">Los Angeles</field>
         <field name="state">CA</field>
         <field name="country">USA</field>
+        <field name="status">new</field>
         <field name="package_budget">2500</field>
         <field name="accommodation_budget">1500</field>
         <field name="accommodation_type_id" ref="accommodation_type_resort"/>
