@@ -43,4 +43,18 @@
                 </form>
             </field>
         </record>
+
+        <!-- ___________________________SEARCH VIEW___________________________ -->
+
+        <record id="travelagency_packages_search" model="ir.ui.view">
+            <field name="name">travelagency.packages.search</field>
+            <field name="model">travelagency.packages</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="package_type_id"/>
+                    <field name="price"/>
+                    <field name="days"/>
+                </search>
+            </field>
+        </record>
 </odoo>

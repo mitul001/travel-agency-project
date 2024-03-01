@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="accommodation_1" model="travelagency.accommodation">
+        <field name="name">Luxury Hotel</field>
+        <field name="price">500</field>
+        <field name="description">Luxurious hotel with top-notch amenities</field>
+        <field name="accommodation_type_id" ref="accommodation_type_hotel"/>
+    </record>
+
+    <record id="accommodation_2" model="travelagency.accommodation">
+        <field name="name">Beach Resort</field>
+        <field name="price">300</field>
+        <field name="description">Relaxing resort overlooking the sea</field>
+        <field name="accommodation_type_id" ref="accommodation_type_resort"/>
+    </record>
+
+    <record id="accommodation_3" model="travelagency.accommodation">
+        <field name="name">Private Villa</field>
+        <field name="price">700</field>
+        <field name="description">Exclusive villa with stunning views and private pool</field>
+        <field name="accommodation_type_id" ref="accommodation_type_villa"/>
+    </record>
+
+    <record id="accommodation_4" model="travelagency.accommodation">
+        <field name="name">City Apartment</field>
+        <field name="price">200</field>
+        <field name="description">Modern apartment in the heart of the city</field>
+        <field name="accommodation_type_id" ref="accommodation_type_apartment"/>
+    </record>
+
+    <record id="accommodation_5" model="travelagency.accommodation">
+        <field name="name">Cozy Bed and Breakfast</field>
+        <field name="price">100</field>
+        <field name="description">Quaint B&amp;B with homemade breakfast</field>
+        <field name="accommodation_type_id" ref="accommodation_type_bedandbreakfast"/>
+    </record>
+</odoo>

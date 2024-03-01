@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="customer_demo_1" model="travelagency.customer">
+        <field name="name">John Doe</field>
+        <field name="gender">male</field>
+        <field name="phone">1234567890</field>
+        <field name="email">john.doe@example.com</field>
+        <field name="street">123 Main Street</field>
+        <field name="city">New York</field>
+        <field name="state">NY</field>
+        <field name="country">USA</field>
+        <field name="package_budget">3000</field>
+        <field name="accommodation_budget">2000</field>
+        <field name="accommodation_type_id" ref="accommodation_type_hotel"/>
+        <field name="packages_type_id" ref="budget"/>
+        <field name="package_ids" eval="[(ref('package_1'))]"/>
+        <field name="accommodation_ids" eval="[(ref('accommodation_1'))]"/>
+    </record>
+    
+    <record id="customer_demo_2" model="travelagency.customer">
+        <field name="name">Alice Smith</field>
+        <field name="gender">female</field>
+        <field name="phone">9876543210</field>
+        <field name="email">alice.smith@example.com</field>
+        <field name="street">456 Oak Street</field>
+        <field name="city">Los Angeles</field>
+        <field name="state">CA</field>
+        <field name="country">USA</field>
+        <field name="package_budget">2500</field>
+        <field name="accommodation_budget">1500</field>
+        <field name="accommodation_type_id" ref="accommodation_type_resort"/>
+        <field name="packages_type_id" ref="romantic"/>
+        <field name="package_ids" eval="[(ref('package_2'))]"/>
+        <field name="accommodation_ids" eval="[(ref('accommodation_1'))]"/>
+    </record>
+    
+</odoo>

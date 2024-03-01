@@ -19,6 +19,8 @@
                 <field name="email"/>
                 <field name="packages_type_id"/>
                 <field name="accommodation_type_id"/>
+                <field name="accommodation_budget" optional="hide"/>
+                <field name="package_budget" optional="hide"/>
                 <field name="gender" optional="hide"/>
                 <field name="street" optional="hide"/>
                 <field name="street2" optional="hide"/>
@@ -60,11 +62,15 @@
                             <field name="phone"/>
                             <field name="email"/>
                         </group>
-                    </group>
-                    <group>
-                        <field name="budget"/>
-                        <field name="packages_type_id"/>
-                        <field name="accommodation_type_id"/>
+                        <group>
+                            <field name="packages_type_id"/>
+                            <field name="accommodation_type_id"/>
+                            <field name="budget"/>
+                        </group>
+                        <group>
+                            <field name="accommodation_budget"/>
+                            <field name="package_budget"/>
+                        </group>
                     </group>
                     <notebook>
                         <page string="Packages">
@@ -75,6 +81,11 @@
                         </page>
                     </notebook>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
             </form>
         </field>
     </record>
