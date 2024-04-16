@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="ta_menu_root" name="Travel Agency">
+        <menuitem id="ta_menu_first_level" name="Customer" sequence="1" action="ta_customer_action"/>
+        <menuitem id="ta_product_service_menu_first_level" name="Product &amp; service" sequence="2">
+            <menuitem id="travelagnecy_product_service_menu_action" action="product_template_action_package"/>
+            <menuitem id="ta_accommodation_service_menu_action" action="product_template_action_acc"/>
+            <menuitem id="ta_transportation_service_menu_action" action="product_template_action_transport"/>
+        </menuitem>
+        <menuitem id="ta_settings_menu_first_level" name="Configuration" sequence="3">
+            <menuitem id="ta_package_type_menu_action" action="product.product_category_action_form" name="Types"/>
+        </menuitem>
+    </menuitem>
+</odoo>

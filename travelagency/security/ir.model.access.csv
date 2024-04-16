@@ -1,6 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-travelagency.access_travelagency_customer,access_travelagency_customer,travelagency.model_travelagency_customer,base.group_user,1,1,1,1
-travelagency.access_travelagency_packages,access_travelagency_packages,travelagency.model_travelagency_packages,base.group_user,1,1,1,1
-travelagency.access_travelagency_package_type,access_travelagency_package_type,travelagency.model_travelagency_package_type,base.group_user,1,1,1,1
-travelagency.access_travelagency_accommodation,access_travelagency_accommodation,travelagency.model_travelagency_accommodation,base.group_user,1,1,1,
-travelagency.access_travelagency_accommodation_type,access_travelagency_accommodation_type,travelagency.model_travelagency_accommodation_type,base.group_user,1,1,1,1
+travelagency.access_ta_customer,access_ta_customer,travelagency.model_ta_customer,base.group_user,1,1,1,1

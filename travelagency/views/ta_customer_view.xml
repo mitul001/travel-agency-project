@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="ta_customer_action" model="ir.actions.act_window">
+        <field name="name">Customer</field>
+        <field name="res_model">ta.customer</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- ___________________________TREE VIEW___________________________ -->
+
+    <record id="ta_customer_view_tree" model="ir.ui.view">
+        <field name="name">ta.customer.view.tree</field>
+        <field name="model">ta.customer</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="partner_id"/>
+                <field name="phone"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="email"/>
+                <field name="status"/>
+                <field name="gender" optional="hide"/>
+                <field name="street" optional="hide"/>
+                <field name="street2" optional="hide"/>
+                <field name="city" optional="hide"/>
+                <field name="state_id" optional="hide"/>
+                <field name="country_id" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- ___________________________FORM VIEW___________________________ -->
+
+    <record id="ta_customer_view_form" model="ir.ui.view">
+        <field name="name">ta.customer.view.form</field>
+        <field name="model">ta.customer</field>
+        <field name="arch" type="xml">
+            <form string="Customer"  create='0'>
+                <header>
+                    <button name="action_confirm" type="object" string="Confirm" class="oe_highlight" invisible="status in ('confirmed','cancelled')"/>
+                    <button name="action_cancel" type="object" string="Cancel" invisible="status in ('confirmed','cancelled')"/>
+                    <field name="status" widget='statusbar' statusbar_visible='new,package_added,confirmed'/>
+                    <!-- <button name="check" type="object" string="Click!"/> -->
+                </header>
+                <sheet>
+                    <h1>
+                        <field  name="partner_id" placeholder="e.g. Mitul" />
+                    </h1>
+                    <div>
+                        <group>
+                            <field name="status" invisible="1"/>
+                        </group>
+                    </div>
+                    <group>
+                        <group>
+                            <span class="o_form_label o_td_label">
+                                <b>Address</b>
+                            </span>
+                            <div class="o_address_format">
+                                <field name="street" placeholder="Street..." class="o_address_street"/>
+                                <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                                <field name="city" placeholder="City" class="o_address_city"/>
+                                <field name="state_id" class="o_address_state" placeholder="State"/>
+                                <div class="d-flex justify-content-between">
+                                    <field name="country_id" placeholder="Country" class="o_address_country"/>
+                                </div>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="gender"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                        </group>
+                        <group>
+                            <lable for="date_from" string="Date"><h6>Date:</h6></lable>
+                            <div class="w-100">
+                                <div class="o_row">
+                                    <field name="date_from" widget="daterange" />
+                                    <i class="fa fa-long-arrow-right mx-2" aria-lable="Arrow icon"
+                                        title="Arrow" />
+                                    <field name="date_to" widget="daterange" />
+                                </div>
+                            </div>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Packages">
+                            <field name="package_ids" domain="[('category', '=', 'package')]"
+                            context="{'default_category':'package'}">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="list_price"/>
+                                    <field name="standard_price"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Accommodations">
+                            <field name="accommodation_ids" domain="[('category', '=', 'accommodation')]"
+                            context="{'default_category':'accommodation'}">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="list_price"/>
+                                    <field name="standard_price"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Transportation">
+                            <field name="transportation_ids" domain="[('category', '=', 'transportation')]"
+                           context="{'default_category':'transportation'}">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="list_price"/>
+                                    <field name="standard_price"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <div class="text-end">
+                        <h6>
+                            Total Amount: 
+                            <field name="total_amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                        </h6>
+                    </div>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- ___________________________SEARCH VIEW___________________________ -->
+
+    <record id="ta_customer_view_search" model="ir.ui.view">
+        <field name="name">ta.customer.view.search</field>
+        <field name="model">ta.customer</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="partner_id"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="status"/>
+                <field name="gender"/>
+                <field name="street" />
+                <field name="street2" />
+                <field name="city" />
+                <field name="state_id" />
+                <field name="country_id"/>
+                <group string="Group By">
+                    <filter string="Status" name='status' context="{'group_by':'status'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>
