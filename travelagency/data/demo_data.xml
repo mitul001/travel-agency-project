@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="1">
+        <record id="package_Goa" model="product.template">
+            <field name="name">Goa</field>
+            <field name="standard_price">15000.0</field>
+            <field name="list_price">10000.0</field>
+            <field name="detailed_type">service</field>
+            <field name="category">package</field>
+            <field name="image_1920" type="base64" file="travelagency/static/img/goa_package.jpeg"/>
+        </record>
+    </data>
+</odoo>
+
+
+<!-- <record id="consu_delivery_03" model="product.product">
+    <field name="name">Four Person Desk</field>
+    <field name="categ_id" ref="product_category_5"/>
+    <field name="standard_price">2500.0</field>
+    <field name="list_price">2350.0</field>
+    <field name="detailed_type">consu</field>
+    <field name="weight">0.01</field>
+    <field name="uom_id" ref="uom.product_uom_unit"/>
+    <field name="uom_po_id" ref="uom.product_uom_unit"/>
+    <field name="description_sale">Four person modern office workstation</field>
+    <field name="default_code">FURN_8220</field>
+    <field name="image_1920" type="base64" file="product/static/img/product_product_d03-image.png"/>
+</record> -->

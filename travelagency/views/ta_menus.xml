@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <menuitem id="ta_menu_root" name="Travel Agency">
+    <menuitem id="ta_menu_root" name="Travel Agency" web_icon="travelagency,static/img/logo.png">
         <menuitem id="ta_menu_first_level" name="Customer" sequence="1" action="ta_customer_action"/>
         <menuitem id="ta_product_service_menu_first_level" name="Product &amp; service" sequence="2">
             <menuitem id="travelagnecy_product_service_menu_action" action="product_template_action_package"/>

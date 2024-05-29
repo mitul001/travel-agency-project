@@ -14,11 +14,7 @@
         'views/ta_menus.xml'
     ],
     'demo':[
-        # 'demo/demo_package_type.xml',
-        # 'demo/demo_accommodation_type.xml',
-        # 'demo/demo_package.xml',
-        # 'demo/demo_accommodation.xml',
-        # 'demo/demo_customer.xml',
+        # 'data/demo_data.xml',
     ],
     'installable': True,
     'application': True,

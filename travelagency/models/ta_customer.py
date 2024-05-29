@@ -4,7 +4,7 @@ from builtins import sum
 class taCustomer(models.Model):
     _name = 'ta.customer'
     _description = 'Customer of Travel Agency'
-    _inherit = ['mail.thread.main.attachment', 'mail.activity.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _rec_name = 'partner_id'
 
     partner_id = fields.Many2one(
